@@ -1,5 +1,7 @@
 # STF8
 STF8: Standard Text Format
+<Pre>
+
 
 #STF8 is now formalised by #ConCensus!
 
