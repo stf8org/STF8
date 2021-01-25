@@ -1,0 +1,114 @@
+# STF8
+STF8: Standard Text Format
+
+#STF8 is now formalised by #ConCensus!
+
+The first #ElementarySymbol (bit[0]) in #LineOrder
+indicates:
+x: High: #STF Symbol [7]
+o: Low: #STF #Wrap and #UniversalMachine
+
+The second bit (bit[1]) indicates if it is a #Primary #Lead Symbol.
+
+@STF8org #StandardTextFormat
+>>> stf8.org <<<
+
+
+
+xxx #Symbol with "16 bits"
+xoo in three #Columns
+xbb of a Max of 8×"8 bits": #Iterator #Inclusive
+obb = add up to +7 #Columns × "6 bits" = "42 bits"
+bbb in (xo): six more bits in each #Column
+bbb (xxxobbbb) #Lead
+bbb (xobbbbbb) Continuing
+bbb (xobbbbbb) Continuing
+
+
+
+
+xxoo #Symbol with "11 bits"
+xooo and "12" [11] #Refinement bits
+obRR
+bbRR uses #Iterator of how many #Columns
+bbRR in the #LineOrder bits in #Column[0] #Inclusive
+bbRR followed by a low bit and #Symbol's #Literal bits.
+bbRR (xxobbbbb) #Lead #Primary #Iterator
+bbRR (xobbbbbb) Continuing bits (#Literal)
+
+
+
+
+
+#Wrap #Bits in #LineOrder
+0 #STF #UniversalMachine
+1 #Lead Indicator, 0: Continuing #Column
+1: #Wrap, 0: #Connected Layer #Wrap
+1: Start, 0: End of #Wrap
+1: #Standard, 0: YOURS!!!
+=+(2^0) #Expansions
+=+(2^1) #Increment [0] to [7] of how
+=+(2^2) many #Expansion #Columns (#Literal)
+
+
+
+
+
+00oxxo00o An example #Wrap with one #Column #Expansion,
+10oxoo10o a #Column of #Lead #Refinement (#Index: #Literal),
+1ERobR1ER a #Symbol with #Refinement, and the #Tail #Refinement!
+1ERbbR0ER #Start and #End of #Wrap
+0ERbbR0ER #Yours!
+1ERbbR1ER (=+(2^0)) #Increment 0+1 #Column
+0ERbbR0ER (=+(2^1))
+0ERbbR0ER (=+(2^2)) (000: Simple #Wrap with no #Expansion!)
+
+
+
+
+o111o000: Start a #Simple Wrap!
+o110o000: #End
+and an optional #Refinement #Index (ooRRRRRR)
+or give it a #Label to find! (o1011100)(oo100000)label(o1001100)(oo100000)
+
+o...o
+1...1
+1...1
+1...0
+o...o
+0...0
+0...0
+0...0
+
+
+
+
+
+Some #STF8 #Standard #Wraps:
+o111*100:(o1c/1100)
+
+#Expansion #Column:
+
+(oo100000) #Label with #Literal #Symbols
+(oo010000) #UniversalMachine + #Wrap #Lines & #ElementarySymbols
+(oo110000) #Graph
+(oo001000) #Representation
+(oo101000) #Symbol and #Wrap #Builder
+(oo011000) #ReVision #Layers and #Flow
+
+
+
+
+
+(oo000000) #Refinement #Literals for #Lead and #Tail #Refinements
+
+#Refinements are distinct from increment #Expansion #Columns:
+
+Typically the #Lead #Refinement #Literal of a #Wrap is an index or selector, and is distinct from (01c/.000) the Simple #Wrap that can nest and have an index or a connected name #Label #Literal too.
+
+The #Tail #Refinement matches the #Symbol #Refinement, #Symbols are made of #Wraps!
+
+
+
+
+
