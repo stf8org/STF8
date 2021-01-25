@@ -1,5 +1,7 @@
 # STF8
 STF8: Standard Text Format
+<P>
+<A href="stf8.html" >Current Demo: http://stf8.net/stf8.html</a>
 <Pre>
 
 
