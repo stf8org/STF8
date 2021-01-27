@@ -6,7 +6,17 @@
 <body>
 <canvas id="myCanvas" style="z-index:15;position:absolute;top:0px;left:0px;"></canvas>
 
+<form id="wtf" action="" method="">
+<input id="text" onChange="ReadText();" onInput="ReadText();" onChanged="ReadText();" >
+</form>
+
+
 <script>
+function ReadText()
+{
+SymbolLoader(document.getElementById("text").value);
+}
+
 
 function SymbolLoader(txt){
 
