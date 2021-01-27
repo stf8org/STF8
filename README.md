@@ -95,10 +95,10 @@ o111*100:(o1c/1100)
 
 (oo100000) #Label with #Literal #Symbols
 (oo010000) #UniversalMachine + #Wrap #Lines & #ElementarySymbols
-(oo110000) #Graph
-(oo001000) #Representation
-(oo101000) #Symbol and #Wrap #Builder
-(oo011000) #ReVision #Layers and #Flow
+(oo110000) #Representation
+
+() #Symbol and #Wrap #Builder
+() #ReVision #Layers and #Flow
 
 
 
