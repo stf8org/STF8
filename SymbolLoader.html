@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+</head>
+<body>
+<canvas id="myCanvas" style="z-index:15;position:absolute;top:0px;left:0px;"></canvas>
+
+<script>
+//add array 1,3-level,2b&3b/cc + vectors. Merge volume fill w/ raster.
+
+var txt="€";//&";//©";//®£";//"🆘";//¥";//®";//a";//%";//F";//∆";//"£";//🆘";
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+var b = 3*3*3;//*3;
+c.width = b;//screen.availWidth; 
+c.height = b;//screen.availHeight; 
+
+ctx.font = b+"px Monospace";// Monospace";//Times";// Monospace";//Arial";    
+
+var bf=(ctx.measureText(txt).height>=b)?b*((b-1)/ctx.measureText(txt).height):b;
+ctx.font = bf+"px Monospace"; 
+
+bf=(ctx.measureText(txt).width>=b)?b*((bf-1)/ctx.measureText(txt).width):bf;
+ctx.font = bf+"px Monospace";
+
+ctx.textBaseline="middle";//"top";//0
+ctx.textAlign = "center";
+ctx.StrokeAlign = "center"; 
+
+ctx.fillStyle="#00000000";
+ctx.fillRect(0,0,2*b,2*b);
+
+//ctx.lineWidth="0.1px";
+ctx.fillStyle="#ffffffff";
+ctx.strokeStyle = "#ffffffff";
+
+//ctx.strokeText(txt,b/2,b/2+1);
+
+ctx.fillText(txt,b/2,b/2+1);
+
+var imgData=ctx.getImageData(0,0,b,b);
+
+for (var a=0;a<b;a++)
+{
+document.write("<br>[");
+for (var d=0;d<b;d++)
+{
+
+var cc = 
+( ( (imgData.data[4*a*b+4*d +0] & parseInt("11000000", 2) ) >> 6) << 6 ) | 
+( ( (imgData.data[4*a*b+4*d +1] & parseInt("11000000", 2) ) >> 6) << 4 ) | 
+( ( (imgData.data[4*a*b+4*d +2] & parseInt("11000000", 2) ) >> 6) << 2 ) | 
+( ( (imgData.data[4*a*b+4*d +3] & parseInt("11000000", 2) ) >> 6) << 0 ) ;
+
+//document.write("'"+cc.toString(2)+"',");
+
+if(cc==0)
+{
+imgData.data[4*a*b+4*d +0] =0;
+imgData.data[4*a*b+4*d +1] =0;
+imgData.data[4*a*b+4*d +2] =0;
+imgData.data[4*a*b+4*d +3] =0xff;
+} else 
+{
+imgData.data[4*a*b+4*d +0] = (imgData.data[4*a*b+4*d +0] & parseInt("11000000", 2));//?0xff:0;
+imgData.data[4*a*b+4*d +1] = (imgData.data[4*a*b+4*d +1] & parseInt("11000000", 2));//?0xff:0;
+imgData.data[4*a*b+4*d +2] = (imgData.data[4*a*b+4*d +2] & parseInt("11000000", 2));//?0xff:0;
+
+imgData.data[4*a*b+4*d +3] =0xff;
+}
+
+var ccc = cc?1:0;
+document.write(""+ccc.toString(2)+",");
+
+/*
+document.write("["+
+imgData.data[4*a*b+4*d +0]
++","+
+imgData.data[4*a*b+4*d +1]
++","+
+imgData.data[4*a*b+4*d +2]
++","+
+imgData.data[4*a*b+4*d +3]
++"],"
+);
+*/
+
+}
+document.write("],");
+}
+ 
+ctx.putImageData(imgData,0,0);
+
+</script>
+</body>
+</html>
