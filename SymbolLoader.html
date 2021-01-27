@@ -7,9 +7,12 @@
 <canvas id="myCanvas" style="z-index:15;position:absolute;top:0px;left:0px;"></canvas>
 
 <script>
+
+function SymbolLoader(txt){
+
 //add array 1,3-level,2b&3b/cc + vectors. Merge volume fill w/ raster.
 
-var txt="€";//&";//©";//®£";//"🆘";//¥";//®";//a";//%";//F";//∆";//"£";//🆘";
+//var txt="€";//&";//©";//®£";//"🆘";//¥";//®";//a";//%";//F";//∆";//"£";//🆘";
 
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
@@ -93,7 +96,11 @@ document.write("],");
 }
  
 ctx.putImageData(imgData,0,0);
-
+}
 </script>
+
+<Script>
+SymbolLoader("€");
+</Script>
 </body>
 </html>
